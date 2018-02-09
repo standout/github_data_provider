@@ -19,7 +19,7 @@ module GithubDataProvider
     def hash_data
       @source_data["items"].each_with_object({}) do |item, hash|
         hash[item["user"]["login"]] ||= 0
-        hash[item["user"]["login"]] += 1 if item["state"] == "closed"
+        hash[item["user"]["login"]] += 1
       end
     end
 
