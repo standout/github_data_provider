@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require "github_data_provider/pull_request_count/closed_pr_count_leaderboard"
+require "github_data_provider/closed_pr_count_leaderboard"
 
-RSpec.describe GithubDataProvider::PullRequestCount::ClosedPRCountLeaderboard do
+RSpec.describe GithubDataProvider::ClosedPRCountLeaderboard do
   let(:source_data) do
     {
       "total_count": 280,
@@ -38,12 +38,12 @@ RSpec.describe GithubDataProvider::PullRequestCount::ClosedPRCountLeaderboard do
       ]
     }
 
-    data = GithubDataProvider::PullRequestCount::ClosedPRCountLeaderboard.new(source_data).parse
+    data = GithubDataProvider::ClosedPRCountLeaderboard.new(source_data).parse
 
     expect(data).to include(
       data: [
         [ "Bob", 2],
-        [ "Fredrik", 0],
+        [ "Fredrik", 1],
       ]
     )
   end
@@ -53,11 +53,11 @@ RSpec.describe GithubDataProvider::PullRequestCount::ClosedPRCountLeaderboard do
       "items" => []
     }
 
-    data = GithubDataProvider::PullRequestCount::ClosedPRCountLeaderboard.new(source_data).parse
+    data = GithubDataProvider::ClosedPRCountLeaderboard.new(source_data).parse
 
     expect(data).to include(
       type: "table",
-      title: "Antal pull requests",
+      title: "Antal pull requests idag",
       meta: { headers: ['Namn', 'Stängda'] }
     )
   end
@@ -92,14 +92,14 @@ RSpec.describe GithubDataProvider::PullRequestCount::ClosedPRCountLeaderboard do
       ]
     }
 
-    data = GithubDataProvider::PullRequestCount::ClosedPRCountLeaderboard.new(source_data).parse
+    data = GithubDataProvider::ClosedPRCountLeaderboard.new(source_data).parse
 
     expect(data).to include(
       {
         data: [
           [ "BruceTheAllmighty", 3],
           [ "Bob", 2],
-          [ "Fredrik", 0],
+          [ "Fredrik", 1],
         ]
       }
     )

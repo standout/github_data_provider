@@ -19,7 +19,7 @@ RSpec.describe GithubDataProvider::PullRequestCount do
       ]
     }
   end
-  let(:url) { "https://api.github.com/search/issues?q=type:pr+org:Standout" }
+  let(:url) { /https:\/\/api.github.com\/search\/issues/ }
 
   it "expires in an hour" do
     stub_request(:get, url).to_return(body: default_response_body.to_json)
@@ -27,7 +27,7 @@ RSpec.describe GithubDataProvider::PullRequestCount do
 
     response = service.fetch
 
-    expect(response.expires_in).to eq 60**2
+    expect(response.expires_at.to_s).to eq (Time.now + 60**2).to_s
   end
 
   it "returns an array with data" do

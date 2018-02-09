@@ -1,5 +1,5 @@
 module GithubDataProvider
-  class PullRequestCount::ClosedPRCountLeaderboard
+  class ClosedPRCountLeaderboard
     # Expects the source data as a hash
     def initialize(source_data)
       @source_data = source_data
