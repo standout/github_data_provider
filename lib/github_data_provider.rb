@@ -3,6 +3,7 @@
 require_relative "github_data_provider/version"
 require_relative "github_data_provider/configuration"
 require_relative "github_data_provider/client"
+require_relative "github_data_provider/pull_request_count"
 
 module GithubDataProvider
 
