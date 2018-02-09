@@ -1,6 +1,6 @@
 module GithubDataProvider
   class PullRequestCount
-    Response = Struct.new(:data, :expires_in)
+    Response = Struct.new(:data, :expires_at)
 
     def initialize(options = {})
       @options = options
@@ -10,7 +10,7 @@ module GithubDataProvider
     def fetch
       Response.new(
         [ClosedPRCountLeaderboard.new(source_data).parse],
-        expires_in
+        expires_at
       )
     end
 
@@ -32,8 +32,8 @@ module GithubDataProvider
       @options[:org] ||= "Standout"
     end
 
-    def expires_in
-      60**2
+    def expires_at
+      Time.now + 60**2
     end
   end
 end
