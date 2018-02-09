@@ -2,7 +2,7 @@
 
 module GithubDataProvider
   RSpec.describe Client do
-    let(:configuration) { Configuration.new }
+    let(:configuration) { { token: "my_token" } }
     let(:client) { Client.new(configuration) }
 
     describe "#get" do

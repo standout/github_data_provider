@@ -8,12 +8,4 @@ RSpec.describe GithubDataProvider do
   it "has a version number" do
     expect(GithubDataProvider::VERSION).to be_a(String)
   end
-
-  describe ".configure" do
-    it "yields the configuration object" do
-      GithubDataProvider.configure do |config|
-        expect(config).to be_a(GithubDataProvider::Configuration)
-      end
-    end
-  end
 end

@@ -21,7 +21,7 @@ module GithubDataProvider
     end
 
     def client
-      @_client ||= GithubDataProvider::Client.new(GithubDataProvider.configuration)
+      @_client ||= GithubDataProvider::Client.new(@options)
     end
 
     def endpoint_uri
