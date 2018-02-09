@@ -1,0 +1,24 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  DisplayCopNames: true
+  Exclude: []
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Lint/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
+Metrics/ModuleLength:
+  Exclude:
+    - "spec/**/*"
+
+ClassAndModuleChildren:
+  Enabled: false
