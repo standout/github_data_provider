@@ -5,8 +5,8 @@ module GithubDataProvider
     describe "#initialize" do
       context "attributes passed as a hash" do
         it "sets the given attributes" do
-          config = Configuration.new(username: "standout")
-          expect(config.username).to eq("standout")
+          config = Configuration.new(token: "token")
+          expect(config.token).to eq("token")
         end
 
         it "raises an error if attribute is unknown" do

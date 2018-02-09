@@ -2,11 +2,10 @@
 
 module GithubDataProvider
   class Configuration
-    attr_accessor :username, :password
+    attr_accessor :token
 
     def initialize(attributes = {})
-      @username = nil
-      @password = nil
+      @token = nil
 
       attributes.each do |key, value|
         public_send "#{key}=", value
