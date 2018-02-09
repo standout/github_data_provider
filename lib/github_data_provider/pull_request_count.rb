@@ -25,7 +25,7 @@ module GithubDataProvider
     end
 
     def endpoint_uri
-      "/search/issues?q=type:pr+org:#{@options[:org]}+is:merged"
+      "/search/issues?q=type:pr+org:#{@options[:org]}+is:merged+closed:#{Time.now.strftime('%F')}&per_page=100"
     end
 
     def set_options_defaults

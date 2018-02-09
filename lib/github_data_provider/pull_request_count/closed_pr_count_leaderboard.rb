@@ -8,7 +8,7 @@ module GithubDataProvider
     def parse
       {
         type: "table",
-        title: "Antal pull requests",
+        title: "Antal pull requests idag",
         meta: { headers: ['Namn', 'Stängda'] },
         data: array_data
       }
